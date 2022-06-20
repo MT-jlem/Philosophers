@@ -6,7 +6,7 @@
 /*   By: mjlem <mjlem@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 09:21:57 by mjlem             #+#    #+#             */
-/*   Updated: 2022/06/10 09:23:10 by mjlem            ###   ########.fr       */
+/*   Updated: 2022/06/11 16:53:55 by mjlem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,21 @@ int	check(char **av)
 		i++;
 	}
 	return (1);
+}
+
+int	init_values(t_args **args, char **av)
+{
+	int	i;
+
+	i = 0;
+	(*args)->ph_num = ft_atoi(av[1]);
+	(*args)->t_die = ft_atoi(av[2]);
+	(*args)->t_eat = ft_atoi(av[3]);
+	(*args)->t_sleep = ft_atoi(av[4]);
+	if (av[5])
+		(*args)->num_eat = ft_atoi(av[5]);
+	else
+		(*args)->num_eat = -1;
+	(*args)->time_start = my_time();
+	return (0);
 }

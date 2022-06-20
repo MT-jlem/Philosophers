@@ -6,7 +6,7 @@
 /*   By: mjlem <mjlem@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 19:54:09 by mjlem             #+#    #+#             */
-/*   Updated: 2022/06/07 15:19:26 by mjlem            ###   ########.fr       */
+/*   Updated: 2022/06/17 16:22:11 by mjlem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,9 @@ int	main(int ac, char **av)
 	{
 		if (pthread_create(&philo[i], NULL, routine, &data[i]))
 			return (1);
+		pthread_detach(philo[i]);
 		i++;
 	}
 	if (check_dead(args, data))
-		return (1);
+		return (clean(args, philo, data));
 }

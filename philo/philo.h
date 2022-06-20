@@ -6,7 +6,7 @@
 /*   By: mjlem <mjlem@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 19:52:25 by mjlem             #+#    #+#             */
-/*   Updated: 2022/06/07 15:19:20 by mjlem            ###   ########.fr       */
+/*   Updated: 2022/06/17 16:21:01 by mjlem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int		ft_strcmp(char *s1, char *s2);
 t_time	my_time(void);
 t_philo	*init_my_data(t_philo *data, t_args *args);
 void	my_sleep(t_time time);
+int		clean(t_args *args, pthread_t *philo, t_philo *data);
 
 #endif
